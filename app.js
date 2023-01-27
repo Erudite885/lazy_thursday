@@ -1,19 +1,24 @@
-const button = document.querySelector('button');
-const output = document.querySelector('p');
+const button = document.querySelector("button");
+const output = document.querySelector("p");
 
 function trackUserHandler() {
   navigator.geolocation.getCurrentPosition(
-    posData => {
-      console.log(posData);
+    (posData) => {
+      setTimeout(() => {
+        console.log(posData);
+      }, 2000);
     },
-    error => {
+    (error) => {
       console.log(error);
     }
   );
-  console.log('Getting position...');
+  setTimeout(() => {
+    console.log("Timer done!");
+  }, 0);
+  console.log("Getting position...");
 }
 
-button.addEventListener('click', trackUserHandler);
+button.addEventListener("click", trackUserHandler);
 
 // let result = 0;
 
